@@ -1,0 +1,253 @@
+nav {
+  ul {
+    list-style: none;
+  }
+}
+
+h1 {
+  $font_size: 60px;
+  margin: 0 0 em(24px,$font_size) 0;
+  color: $color_3;
+  font: bold #{em($font_size)}/1 $heading_fontstack;
+  letter-spacing: -0.05em;
+}
+h2 {
+  $font_size: 36px;
+  margin: 0 0 em(12px,$font_size) 0;
+  padding: 11px 0 0 0;
+  color: darken($color_3,20);
+  font: 300 #{em($font_size)}/1 $heading_fontstack;
+  letter-spacing: -0.05em;
+}
+h3 {
+  $font_size: 24px;
+  margin: 0 0 em(10px,$font_size) 0;
+  color: darken($color_3,20);
+  font: 300 #{em($font_size)}/1.1 $heading_fontstack;
+}
+h4, h5, h6 {
+  $font_size: 18px;
+  margin: 0 0 em(10px,$font_size) 0;
+  color: $color_default_text;
+  font: 300 #{em($font_size)}/1 $heading_fontstack;
+}
+
+
+p, pre, ol, ul, dl, figure, figcaption, table, fieldset {
+  margin: 0 0 $margin_default 0;
+}
+
+pre {
+  white-space: pre-line;
+}
+
+hr {
+  $font_size: 30px;
+  clear: both;
+  display: block;
+  height: 0;
+  padding: 0;
+  font: 600 #{em($font_size)}/1 'Akagi SemiBold', 'Helvetica Neue', Arial, sans-serif;
+  text-align: center;
+  margin: em(16px) 0 em(32px) 0;
+  border: 0;
+}
+
+hr::after {
+  content: "...";
+  height: 0;
+  padding-left: 1em;
+  color: #bbb;
+  letter-spacing: 1em;
+}
+
+blockquote {
+  color: $color_3;
+  border-left: 0.25em solid $color_borders;
+  margin: em(17px) 0 em(25px) 0;
+  padding: 0 em(25px) 0 1.334em;
+  p {
+    line-height: 1.6;
+    margin: em(9px) 0;
+  }
+}
+blockquote, q {
+  quotes:none;
+  &:before, &:after {
+    content:'';
+    content:none;
+  }
+}
+
+ul {
+  list-style-type: inherit;
+  ul, ol {
+    margin-top: 0;
+  }
+}
+ol {
+  list-style-type: decimal;
+}
+li, dd {
+  margin-left: em(29px);
+}
+li li {
+  margin-top: 0;
+}
+dt {
+  font-family: 'Proxima Nova Bold',sans-serif;
+  font-weight: bold;
+}
+
+figcaption, caption {
+  margin: $margin_default 0;
+  line-height: 1em;
+  color: lighten($color_4,50%);
+  font-size: em(14px);
+  font-family: 'Proxima Nova Regular',sans-serif;
+  text-align: left;
+  caption-side: bottom;
+}
+
+figure {
+  img {
+    width: 100%;
+  }
+}
+
+.example {
+  outline: 1px solid #EEE;
+  margin: $margin_default 0 $margin_default 0;
+  padding: em(8px) em(16px) em(12px) em(16px);
+}
+
+
+
+a {
+  color: $color_3;
+  font-size: 100%;
+  font-family: arial ,sans-serif;
+  text-decoration: none;
+}
+.main a {
+  &:hover,
+  &:focus {
+    $my_color: darken($color_3, 10%);
+    color: $my_color;
+  }
+}
+
+em, em a, i, var, samp, cite, cite a {
+  font: italic 300 #{em(16px)}/0.9 $para_fontstack;
+}
+strong, b {
+  font-weight: 600;
+}
+
+:lang(en-gb)>q {
+  quotes:"\201C" "\201D" "\2018" "\2019";
+}
+q {
+  &::before {
+    content: open-quote;
+  }
+  &::after {
+    content: close-quote;
+  }
+}
+
+small {
+  font-size: em(14px); /* 14px */
+  line-height: em(16px); /* em(16px) */
+}
+dfn[title] {
+  border-bottom: 1px dotted rgba(0,0,0,0.2);
+  cursor: help;
+}
+abbr {
+  letter-spacing: 1px;
+  &[title]:hover {
+    @extend dfn[title];
+  }
+}
+time {
+  color: lighten($color_4,50%);
+  font-family: arial ,sans-serif;
+  font-size: em(12px);
+  line-height: em(16px);
+  text-transform: uppercase;
+}
+code, samp {
+  font: #{em(16px)}/0.9 $code_fontstack;
+}
+code {
+  color:$color_3;
+}
+.code {
+  margin: 0 0 0 em(40px);
+  font: #{em(16px)}/1.7 $code_fontstack;
+  color: #999;
+  li {
+    list-style: decimal-leading-zero;
+    background: #F0F0F0;
+    margin: 0 0 -1px 0;
+    border-top: 1px solid white;
+    padding: 0 0.5em;
+  }
+  .tab1 {
+    padding-left: 4ex;
+  }
+}
+kbd {
+  margin: 0 0.4px 0;
+  padding: em(5px) em(6px);
+  background-color: lighten($color_3,60%);
+  color: darken($color_3,20%);
+  font: normal #{em(14px)}/90% sans-serif;
+  border: 1px solid lighten($color_3,50%);
+  @include border-radius(4px);
+//  @include background-clip(padding-box);
+}
+sub {
+  font-size: smaller;
+  line-height: 90%;
+  vertical-align: sub;
+}
+sup {
+  font-size: smaller;
+  line-height: 90%;
+  vertical-align: super;
+}
+
+
+
+mark, ins {
+  color: $color_4;
+  background-color: lighten($color_3,20%);
+  text-decoration:none;
+}
+del {
+  text-decoration: line-through;
+}
+
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td, th {
+  padding: em(8px) em(25px) em(8px) 0;
+  border-bottom: 1px solid lighten($color_4,80%);
+  text-align: left;
+}
+th {
+  padding: em(8px) 0 em(7px) 0;
+  border-bottom-color: lighten($color_4,80%);
+  color: $color_3;
+  font: 500 #{em(17px)}/#{em(16px)} $heading_fontstack;
+  vertical-align: bottom;
+}
+td {
+  vertical-align: top;
+}

@@ -1,0 +1,33 @@
+@import "utilities/backgrounds";
+@import "utilities/keyframe_animations";
+@import "utilities/shapes";
+@import "utilities/responsive";
+@import "utilities/transforms";
+@import "utilities/typography";
+@import "utilities/transition";
+@import "utilities/forms";
+@import "utilities/buttons";
+@import "utilities/positioning";
+
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin box-sizing($type) { // border, content, padding
+  -webkit-box-sizing: $type;
+  -moz-box-sizing: $type;
+  box-sizing: $type;
+}
+
+@mixin appearance($appearance) {
+  -webkit-appearance: $appearance;
+  -moz-appearance: $appearance;
+}

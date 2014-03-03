@@ -1,0 +1,11 @@
+@mixin transition($property, $duration, $function, $delay: 0s) {
+  -webkit-transition: ($property $duration $function $delay);
+  -moz-transition: ($property $duration $function $delay);
+  -ms-transition: ($property $duration $function $delay);
+  -o-transition: ($property $duration $function $delay);
+  transition: ($property $duration $function $delay);
+}
+
+@mixin single-transition($property, $duration, $function, $delay: 0s) {
+  @include transition($property, $duration, $function, $delay);
+}

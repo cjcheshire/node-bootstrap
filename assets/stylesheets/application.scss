@@ -1,0 +1,29 @@
+@import "variables";
+@import "colours";
+@import "utilities";
+@import "core/all";
+
+@import "modules/nav_top";
+
+
+
+
+body {
+  margin-top: $height_nav*2;
+  @include respond-to($mobile) {
+    padding-left: em(16px);
+    padding-right: em(16px);
+  }
+  @include respond-from($mobile) {
+    padding-left: em(32px);
+    padding-right: em(32px);
+  }
+}
+
+.container {
+  position: relative;
+  @include respond-from($desktop) {
+    margin: 0 auto;
+    max-width: em(960px);
+  }
+}

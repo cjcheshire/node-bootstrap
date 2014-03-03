@@ -1,0 +1,34 @@
+mixin javascriptIncludeTag(path, type)
+  type = type || 'text/javascript'
+  script(src="#{javascriptsBase}/#{path}.js", type="#{type}")
+
+mixin stylesheetLinkTag(path, media)
+  link(href="#{stylesheetsBase}/#{path}.css", media="#{media}", rel="stylesheet", type="text/css")
+
+mixin imageIncludeTag(path, alt, cssClasses, title)
+  alt = alt || ''
+  cssClasses = cssClasses || ''
+  title = title || ''
+  img(src="#{imagesBase}/#{path}", alt="#{alt}", class="#{cssClasses}", title="#{title}")
+
+mixin urlBuilder(url, cssClasses, anchor, rel)
+  anchor = anchor || ''
+  cssClasses = cssClasses || ''
+  rel = rel || ''
+  a(href="#{url}#{anchor}", class="#{cssClasses}", rel="#{rel}")
+    block
+
+mixin pageNavigationListItem(number, url)
+  - if(currentUrl !== url)
+    li
+      +urlBuilder(url)
+        block
+  - else
+    li.active
+      span
+        block
+
+mixin paginationContainer()
+  nav(class="pagination", role="navigation")
+    ul.group
+      block

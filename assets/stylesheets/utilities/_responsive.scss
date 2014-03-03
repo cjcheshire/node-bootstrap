@@ -1,0 +1,39 @@
+$fix-mqs: false !default;
+
+@mixin respond-from($width) {
+  @if $fix-mqs {
+    @if $fix-mqs >= $width {
+      @content;  
+    }
+  }
+  @else {
+    @media screen and (min-width: $width) {
+      @content;
+    }
+  }
+}
+@mixin respond-to($width) {
+  @if $fix-mqs {
+    @if $fix-mqs < $width {
+      @content;  
+    }
+  }
+  @else {
+    @media screen and (max-width: $width) {
+      @content;
+    }
+  }
+}
+
+$old-ie: false !default;
+
+@mixin old-ie {
+  @if $old-ie {
+    @content;
+  }
+}
+
+@function ie-expression($expression) {
+  @return unquote("expression(#{$expression})");
+}
+

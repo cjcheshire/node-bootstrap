@@ -1,0 +1,31 @@
+$font-base: 16px !default;
+$font-base-line-height: 24px !default;
+
+
+@mixin font-face($family, $path) {
+  @font-face {
+    font-family: $family;
+    src: url('#{$path}.eot?') format('eot'), url('#{$path}.woff') format('woff'), url('#{$path}.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+@function em($target, $context: $font-base) {
+   @if $target == 0 { @return 0 }
+   @return $target / $context + 0em;
+}
+
+@function lh($amount: 1, $context: $font-base) {
+   @return em($font-base-line-height * $amount, $context);
+}
+
+@mixin font-smoothing($value: on) {
+  @if $value == on {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  } @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
