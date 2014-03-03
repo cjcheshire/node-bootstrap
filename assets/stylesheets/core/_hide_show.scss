@@ -1,0 +1,17 @@
+.hide {
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.js-hide {
+  .js-enabled & {
+    display: none;
+  }
+}
+.js-show {
+  display: none;
+  .js-enabled & {
+    display: block;
+  }
+}
