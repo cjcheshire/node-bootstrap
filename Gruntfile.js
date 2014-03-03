@@ -228,7 +228,8 @@ module.exports = function (grunt) {
     'clean:heroku',
     'copy:herokupackage',
     'exec:deploy',
-    'open:deploy'
+    'open:deploy',
+    'clean:heroku'
   ]);
 
 
