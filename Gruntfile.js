@@ -85,6 +85,15 @@ module.exports = function (grunt) {
       }
     },
 
+    autoprefixer: {
+      options: {
+        browsers: ['last 1 version'] // more codenames at https://github.com/ai/autoprefixer#browsers
+      },
+      css: {
+        src: '<%= folders.dist %>/assets/stylesheets/**.css'
+      }
+    },
+
     imagemin: {
       dist: {
         files: [
@@ -105,7 +114,7 @@ module.exports = function (grunt) {
       },
       sass: {
         files: ['<%= folders.app %>/stylesheets/**/*.scss'],
-        tasks: ['compass:server']
+        tasks: ['compass:server', 'autoprefixer']
       },
       js: {
         files: ['<%= folders.app %>/javascripts/**'],
